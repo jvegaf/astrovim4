@@ -48,9 +48,13 @@ return {
         ["<Leader>fo"] = false,
         ["<Leader>fr"] = { ":Telescope oldfiles<cr>" },
         ["<Leader>q"] = { ":quit<cr>" },
-        ["Q"] = { ":bwipeout<cr>", desc = "Close Buffer" },
+        ["Q"] = { function() require("astrocore.buffer").close() end, desc = "Close Buffer" },
         ["W"] = { "<cmd>w<cr>", desc = "Write" },
         ["vv"] = { "V", desc = "Visual mode" },
+        ["<Esc>"] = { ":nohlsearch<Bar>:echo<CR>", desc = "Cancel search highlighting" },
+        ["<A-1>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
+        ["<A-2>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
+        ["<A-3>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
         ["<Tab>"] = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
@@ -83,10 +87,22 @@ return {
         ["<leader>zc"] = { "<cmd>e $MYVIMRC<cr>", desc = "Config" },
         ["<leader>zh"] = { "<cmd>checkhealth<cr>", desc = "Health" },
         ["<leader>zn"] = { "<cmd>Telescope notify<cr>", desc = "Notifications" },
+        ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
       },
       t = {
+        ["<A-1>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+        ["<A-2>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+        ["<A-3>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
+      },
+      v = {
+        ["<"] = { "<gv", desc = "Stay in indent mode" },
+        [">"] = { ">gv", desc = "Stay in indent mode" },
+        ["p"] = { '"_dP', desc = "Dont yank in visual paste" },
+      },
+      x = {
+        ["p"] = { '"_dP', desc = "Dont yank in visual paste" },
       },
     },
   },
