@@ -49,6 +49,7 @@ return {
         ["<Leader>fr"] = { ":Telescope oldfiles<cr>" },
         ["<Leader>q"] = { ":quit<cr>" },
         ["Q"] = { function() require("astrocore.buffer").close() end, desc = "Close Buffer" },
+        ["gq"] = { function() vim.lsp.buf.format(require("astrolsp").format_opts) end, desc = "Format Buffer" },
         ["W"] = { "<cmd>w<cr>", desc = "Write" },
         ["vv"] = { "V", desc = "Visual mode" },
         ["<Esc>"] = { ":nohlsearch<Bar>:echo<CR>", desc = "Cancel search highlighting" },
