@@ -22,6 +22,7 @@ return {
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.indent.mini-indentscope" },
+  { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.motion.mini-ai" },
   { import = "astrocommunity.motion.mini-move" },
@@ -37,5 +38,6 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.project.project-nvim" },
   { import = "astrocommunity.register.nvim-neoclip-lua" },
+  { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   { import = "astrocommunity.syntax.hlargs-nvim" },
 }

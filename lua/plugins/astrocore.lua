@@ -49,9 +49,14 @@ return {
         ["<Leader>fr"] = { ":Telescope oldfiles<cr>" },
         ["<Leader>q"] = { ":quit<cr>" },
         ["Q"] = { function() require("astrocore.buffer").close() end, desc = "Close Buffer" },
-        ["gq"] = { function() vim.lsp.buf.format(require("astrolsp").format_opts) end, desc = "Format Buffer" },
         ["W"] = { "<cmd>w<cr>", desc = "Write" },
         ["vv"] = { "V", desc = "Visual mode" },
+        ["ss"] = { ":split<CR>", desc = "Split horizontal" },
+        ["sv"] = { ":vsplit<CR>", desc = "Split vertical" },
+        ["sh"] = { "<C-w>h", desc = "Move Win left" },
+        ["sj"] = { "<C-w>j", desc = "Move Win down" },
+        ["sk"] = { "<C-w>k", desc = "Move Win up" },
+        ["sl"] = { "<C-w>l", desc = "Move Win right" },
         ["<Esc>"] = { ":nohlsearch<Bar>:echo<CR>", desc = "Cancel search highlighting" },
         ["<A-1>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
         ["<A-2>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
@@ -64,6 +69,8 @@ return {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
+        ["<C-m>"] = { "<C-i>", desc = "Jumplist" },
+        ["<C-j>"] = { function() vim.diagnostic.goto_next() end, desc = "Next diagnostic" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {

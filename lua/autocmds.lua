@@ -30,6 +30,16 @@ autocmd("VimLeave", {
   callback = function() vim.fn.jobstart { "autocomp", vim.fn.expand "%:p", "stop" } end,
 })
 
+autocmd("InsertLeave", {
+  pattern = "*",
+  command = "set nopaste",
+})
+
+autocmd("FileType", {
+  pattern = { "json", "jsonc", "markdown" },
+  callback = function() vim.opt.conceallevel = 0 end,
+})
+
 autocmd("LspAttach", {
   group = augroup("lsp_attach_auto_diag", { clear = true }),
   callback = function(args)
@@ -54,33 +64,28 @@ autocmd("LspAttach", {
       end,
     })
 
-    vim.keymap.set("n", "gq", function()
-      vim.lsp.buf.format {
-        async = false,
-        filter = function(attachedClient) return attachedClient.name == "null-ls" end,
-      }
-    end, { buffer = buffer, noremap = true, silent = true, desc = "Format buffer" })
+    vim.keymap.set(
+      "n",
+      "gq",
+      function() vim.lsp.buf.format(require("astrolsp").format_opts) end,
+      { buffer = buffer, noremap = true, silent = true, desc = "Format buffer" }
+    )
   end,
 })
 
 -- nvim-tree
 
 local function open_nvim_tree(data)
-  -- buffer is a directory
   local directory = vim.fn.isdirectory(data.file) == 1
 
   if not directory then return end
 
-  -- create a new, empty buffer
   vim.cmd.enew()
 
-  -- wipe the directory buffer
   vim.cmd.bw(data.buf)
 
-  -- change to the directory
   vim.cmd.cd(data.file)
 
-  -- open the tree
   require("nvim-tree.api").tree.open()
 end
 
