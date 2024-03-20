@@ -34,6 +34,7 @@ return {
   { import = "astrocommunity.pack.kotlin" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.project.project-nvim" },
