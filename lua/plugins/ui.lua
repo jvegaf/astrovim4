@@ -56,7 +56,7 @@ return {
   },
   {
     "zbirenbaum/neodim",
-    enabled = false,
+    enabled = true,
     event = "LspAttach",
     opts = {
       alpha = 0.75,

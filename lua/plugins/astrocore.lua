@@ -92,7 +92,7 @@ return {
         ["<leader>t"] = { name = "Test" },
         ["<leader>T"] = { name = "Telescope" },
         ["<leader>z"] = { name = "System" },
-        ["<leader>zc"] = { "<cmd>e $MYVIMRC<cr>", desc = "Config" },
+        ["<leader>zs"] = { "<cmd>e $MYVIMRC<cr>", desc = "Config" },
         ["<leader>zh"] = { "<cmd>checkhealth<cr>", desc = "Health" },
         ["<leader>zn"] = { "<cmd>Telescope notify<cr>", desc = "Notifications" },
         ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
