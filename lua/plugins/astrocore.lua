@@ -60,7 +60,7 @@ return {
         ["<Esc>"] = { ":nohlsearch<Bar>:echo<CR>", desc = "Cancel search highlighting" },
         ["<A-1>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
         ["<A-2>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
-        ["<A-3>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
+        ["<A-4>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
         ["<Tab>"] = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
@@ -100,7 +100,7 @@ return {
       t = {
         ["<A-1>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
         ["<A-2>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
-        ["<A-3>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+        ["<A-4>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
       },
