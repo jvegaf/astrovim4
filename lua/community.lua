@@ -4,8 +4,7 @@
 
 ---@type LazySpec
 return {
-  -- TODO: Remove branch v4 on release
-  { "AstroNvim/astrocommunity", branch = "v4" },
+  "AstroNvim/astrocommunity" ,
   { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.colorscheme.vscode-nvim" },

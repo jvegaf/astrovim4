@@ -95,6 +95,7 @@ return {
         ["<leader>zs"] = { "<cmd>e $MYVIMRC<cr>", desc = "Config" },
         ["<leader>zh"] = { "<cmd>checkhealth<cr>", desc = "Health" },
         ["<leader>zn"] = { "<cmd>Telescope notify<cr>", desc = "Notifications" },
+        ["<leader>zm"] = { "<cmd>Mason<cr>", desc = "Mason" },
         ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
       },
       t = {
