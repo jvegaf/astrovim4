@@ -23,12 +23,12 @@ autocmd("BufEnter", {
   desc = "Disable New Line Comment",
 })
 
-autocmd("VimLeave", {
-  desc = "Stop running auto compiler",
-  group = augroup("autocomp", { clear = true }),
-  pattern = "*",
-  callback = function() vim.fn.jobstart { "autocomp", vim.fn.expand "%:p", "stop" } end,
-})
+-- autocmd("VimLeave", {
+--   desc = "Stop running auto compiler",
+--   group = augroup("autocomp", { clear = true }),
+--   pattern = "*",
+--   callback = function() vim.fn.jobstart { "autocomp", vim.fn.expand "%:p", "stop" } end,
+-- })
 
 autocmd("InsertLeave", {
   pattern = "*",

@@ -26,7 +26,7 @@ return {
   { import = "astrocommunity.motion.mini-ai" },
   { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.pack.angular" },
-  { import = "astrocommunity.pack.cpp" },
+  -- { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.json" },
