@@ -2,6 +2,7 @@ return { -- override nvim-cmp plugin
   "hrsh7th/nvim-cmp",
   dependencies = {
     "hrsh7th/cmp-emoji", -- add cmp source as dependency of cmp
+    "jdrupal-dev/css-vars.nvim",
   },
   -- override the options table that is used in the `require("cmp").setup()` call
   opts = function(_, opts)
@@ -12,6 +13,7 @@ return { -- override nvim-cmp plugin
     opts.sources = cmp.config.sources {
       { name = "nvim_lsp", priority = 1000 },
       { name = "luasnip", priority = 750 },
+      { name = "css_vars", priority = 800 },
       { name = "buffer", priority = 500 },
       { name = "path", priority = 250 },
       { name = "emoji", priority = 700 }, -- add new source
