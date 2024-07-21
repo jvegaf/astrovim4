@@ -4,7 +4,7 @@
 
 ---@type LazySpec
 return {
-  "AstroNvim/astrocommunity" ,
+  "AstroNvim/astrocommunity",
   { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.colorscheme.vscode-nvim" },
@@ -28,7 +28,6 @@ return {
   { import = "astrocommunity.pack.angular" },
   -- { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.html-css" },
-  { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.kotlin" },
   { import = "astrocommunity.pack.rust" },
