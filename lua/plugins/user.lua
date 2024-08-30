@@ -99,6 +99,7 @@ return {
   {
     "MagicDuck/grug-far.nvim",
     event = "VeryLazy",
+    enabled = false,
     cmd = { "GrugFar" },
     opts = {
       keymaps = {
@@ -150,10 +151,12 @@ return {
   },
   {
     "chrisgrieser/nvim-genghis",
+    enabled = false,
     dependencies = "stevearc/dressing.nvim",
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       local g = require "genghis"
+      local map = vim.keymap.set
       map("n", "<localleader>fp", g.copyFilepath, { desc = "genghis: yank filepath" })
       map("n", "<localleader>fn", g.copyFilename, { desc = "genghis: yank filename" })
       map("n", "<localleader>fr", g.renameFile, { desc = "genghis: rename file" })
@@ -167,10 +170,10 @@ return {
     -- stylua: ignore
     keys = {
       { '<leader>vf', '<cmd>DevdocsOpenFloat<CR>', desc = 'devdocs: open float', },
-      { '<leader>vb', '<cmd>DevdocsOpen<CR>', desc = 'devdocs: open in buffer', },
-      { '<leader>vo', '<cmd>DevdocsOpenFloat ', desc = 'devdocs: open documentation', },
-      { '<leader>vi', '<cmd>DevdocsInstall ', desc = 'devdocs: install' },
-      { '<leader>vu', '<cmd>DevdocsUninstall ', desc = 'devdocs: uninstall' },
+      { '<leader>vb', '<cmd>DevdocsOpen<CR>',      desc = 'devdocs: open in buffer', },
+      { '<leader>vo', '<cmd>DevdocsOpenFloat ',    desc = 'devdocs: open documentation', },
+      { '<leader>vi', '<cmd>DevdocsInstall ',      desc = 'devdocs: install' },
+      { '<leader>vu', '<cmd>DevdocsUninstall ',    desc = 'devdocs: uninstall' },
     },
     opts = {
       -- stylua: ignore
