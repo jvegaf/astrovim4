@@ -12,7 +12,7 @@ return {
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.colorscheme.vscode-nvim" },
   { import = "astrocommunity.completion.cmp-cmdline" },
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   -- { import = "astrocommunity.editing-support.neogen" },
   { import = "astrocommunity.editing-support.nvim-regexplainer" },
