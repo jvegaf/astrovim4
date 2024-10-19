@@ -19,6 +19,8 @@ if vim.fn.has "win32" == 1 then
   }
 end
 
+-- TODO: move this import to autocmd
+require "flutter_feature_scaffold"
 
 -- Set up custom filetypes
 -- vim.filetype.add {
