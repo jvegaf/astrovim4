@@ -1,4 +1,22 @@
+---@type LazySpec
 return {
+  "AstroNvim/astrocommunity",
+  { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.lsp.nvim-java" },
+  {
+    "mfussenegger/nvim-jdtls",
+    opts = {
+      settings = {
+        format = {
+          enabled = true,
+          settings = { -- you can use your preferred format style
+            url = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+            profile = "GoogleStyle",
+          },
+        },
+      },
+    },
+  },
   {
     "simaxme/java.nvim",
     config = function() require("simaxme-java").setup() end,
