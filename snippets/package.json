@@ -167,6 +167,94 @@
       {
         "language": "dart",
         "path": "./riverpod/code_generator.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/python_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/dict_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/sets_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/str_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/list_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/tuple_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/shortcut.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/def_function.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/end_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/print_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/control_flow.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/algo_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/datetime_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/np_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/plt_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/PyMySQL_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/django_snippets.json"
+      },
+      {
+        "language": "django-html",
+        "path": "./python/django_template.json"
+      },
+      {
+        "language": "django-txt",
+        "path": "./python/django_template.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/random_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/file_snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "./python/class_snippets.json"
       }
     ]
   }
