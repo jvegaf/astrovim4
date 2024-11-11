@@ -36,6 +36,8 @@ return {
   { import = "astrocommunity.pack.xml" },
   { import = "astrocommunity.project.project-nvim" },
   { import = "astrocommunity.recipes.telescope-nvchad-theme" },
+  { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
+  { import = "astrocommunity.recipes.heirline-mode-text-statusline" },
   { import = "astrocommunity.register.nvim-neoclip-lua" },
   { import = "astrocommunity.syntax.hlargs-nvim" },
 }

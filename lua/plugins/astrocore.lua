@@ -45,6 +45,7 @@ return {
         -- second key is the lefthand side of the map
 
         ["<Leader>c"] = false,
+        ["<Leader>C"] = false,
         ["<Leader>fo"] = false,
         ["<Leader>fr"] = { ":Telescope oldfiles<cr>" },
         ["<Leader>q"] = { ":quit<cr>" },

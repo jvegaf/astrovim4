@@ -86,6 +86,7 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
+    ft = { "java" },
     dependencies = {
       "iomallach/telescope-gradle.nvim",
       "zerochae/telescope-spring.nvim",
