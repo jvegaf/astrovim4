@@ -22,10 +22,10 @@ end
 -- TODO: move this import to autocmd
 require "flutter_feature_scaffold"
 
-vim.filetype.add {
-  pattern = { "*.qss" },
-  command = function() vim.opt.filetype = "css" end,
-}
+-- vim.filetype.add {
+--   pattern = { "*.qss" },
+--   command = function() vim.opt.filetype = "css" end,
+-- }
 
 -- Set up custom filetypes
 -- vim.filetype.add {

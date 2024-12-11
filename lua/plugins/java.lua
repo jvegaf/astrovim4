@@ -84,17 +84,17 @@ return {
       "akinsho/toggleterm.nvim",
     },
   },
-  {
-    "nvim-telescope/telescope.nvim",
-    ft = { "java" },
-    dependencies = {
-      "iomallach/telescope-gradle.nvim",
-      "zerochae/telescope-spring.nvim",
-    },
-    event = "VeryLazy",
-    opts = function()
-      require("telescope").load_extension "gradle"
-      require("telescope").load_extension "spring"
-    end,
-  },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   ft = { "java" },
+  --   dependencies = {
+  --     "iomallach/telescope-gradle.nvim",
+  --     "zerochae/telescope-spring.nvim",
+  --   },
+  --   event = "VeryLazy",
+  --   opts = function()
+  --     require("telescope").load_extension "gradle"
+  --     require("telescope").load_extension "spring"
+  --   end,
+  -- },
 }
