@@ -1,5 +1,28 @@
 return {
   {
+    "rcarriga/nvim-notify",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+    keys = {
+      {
+        "<leader>zn",
+        function() require("telescope").extensions.notify.notify() end,
+        desc = "Notifications",
+      },
+    },
+    opts = function(_, opts)
+      local notify = require "notify"
+      notify.setup {
+        timeout = 1000,
+      }
+
+      vim.notify = notify
+
+      require("telescope").load_extension "notify"
+    end,
+  },
+  {
     "folke/noice.nvim",
     dependencies = { "rcarriga/nvim-notify", "MunifTanjim/nui.nvim" },
     opts = {

@@ -1,10 +1,11 @@
 ---@type LazySpec
 return {
-  "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.java" },
-  { import = "astrocommunity.lsp.nvim-java" },
+  -- "AstroNvim/astrocommunity",
+  -- { import = "astrocommunity.pack.java" },
+  -- { import = "astrocommunity.lsp.nvim-java" },
   {
     "mfussenegger/nvim-jdtls",
+    enabled = false,
     opts = {
       settings = {
         format = {
@@ -19,10 +20,12 @@ return {
   },
   {
     "simaxme/java.nvim",
+    enabled = false,
     config = function() require("simaxme-java").setup() end,
   },
   {
     "oclay1st/gradle.nvim",
+    enabled = false,
     cmd = { "Gradle", "GradleExec", "GradleInit" },
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -36,6 +39,7 @@ return {
   },
   {
     "eatgrass/maven.nvim",
+    enabled = false,
     cmd = { "Maven", "MavenExec" },
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
@@ -46,6 +50,7 @@ return {
   },
   {
     "tobias-z/java-util.nvim",
+    enabled = false,
     config = function()
       require("java_util").setup {}
       -- generate a user command for this features
@@ -77,6 +82,7 @@ return {
   {
     "tvntvn13/java-test-util.nvim",
     ft = { "java" },
+    enabled = false,
     cmd = { "MvnRunMethod", "MvnRunClass", "MvnRunPackage", "MvnRunPrev", "MvnRunAll" },
     config = function() require("java_test_util").setup {} end,
     dependencies = {

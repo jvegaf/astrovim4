@@ -12,7 +12,7 @@ return {
     "stevanmilic/nvim-lspimport",
     ft = { "python" },
     event = "VeryLazy",
-    keys = { { "<leader>a", "<cmd>lua require('lspimport').import()<cr>" } },
+    keys = { { "<leader>I", "<cmd>lua require('lspimport').import()<cr>" } },
   },
   {
     "linux-cultist/venv-selector.nvim",

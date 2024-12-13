@@ -56,7 +56,7 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
-        ["<leader>cc"] = { "gg<S-v>G", desc = "Select All" },
+        ["<C-a>"] = { "gg<S-v>G", desc = "Select All" },
         ["<leader>x"] = { name = "Diagnostics" },
         ["<leader>xc"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Actions" },
         ["<leader>xx"] = { "<cmd>Telescope diagnostics <cr>", desc = "Diagnostics" },
