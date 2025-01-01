@@ -1,3 +1,4 @@
+local keys = require "lazy.core.handler.keys"
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.python-ruff" },
@@ -38,6 +39,9 @@ return {
     "neolooong/whichpy.nvim",
     ft = { "python" },
     opts = {},
+    keys = {
+      { "<leader>lw", "<cmd>WhichPy select<cr>" },
+    },
   },
   {
     "alexpasmantier/pymple.nvim",
@@ -50,6 +54,6 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     build = ":PympleBuild",
-    config = function() require("pymple").setup() end,
+    opts = function() require("pymple").setup {} end,
   },
 }
