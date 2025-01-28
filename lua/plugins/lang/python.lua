@@ -45,6 +45,7 @@ return {
   },
   {
     "alexpasmantier/pymple.nvim",
+    enabled = false,
     -- ft = { "python" },
     dependencies = {
       "nvim-lua/plenary.nvim",

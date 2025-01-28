@@ -30,8 +30,8 @@ return {
         ["sk"] = { "<C-w>k", desc = "Move Win up" },
         ["sl"] = { "<C-w>l", desc = "Move Win right" },
         ["<Esc>"] = { ":nohlsearch<Bar>:echo<CR>", desc = "Cancel search highlighting" },
-        ["<A-1>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
-        ["<A-2>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
+        ["<A-1>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
+        ["<A-2>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
         ["<A-4>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
         ["<Tab>"] = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
