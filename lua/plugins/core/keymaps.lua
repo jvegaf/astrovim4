@@ -20,6 +20,7 @@ return {
         ["<Leader>fo"] = false,
         ["<Leader>fr"] = { ":Telescope oldfiles<cr>" },
         ["<Leader>q"] = { ":quit<cr>" },
+        ["<Leader><Space>"] = { ":Telescope buffers<cr>" },
         ["Q"] = { function() require("astrocore.buffer").close() end, desc = "Close Buffer" },
         ["W"] = { "<cmd>w<cr>", desc = "Write" },
         ["vv"] = { "V", desc = "Visual mode" },
