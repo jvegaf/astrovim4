@@ -34,16 +34,17 @@ return {
         ["<A-1>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
         ["<A-2>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
         ["<A-4>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
-        ["<Tab>"] = {
+        ["J"] = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
         },
-        ["<S-Tab>"] = {
+        ["K"] = {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
         ["<C-m>"] = { "<C-i>", desc = "Jumplist" },
-        ["<C-j>"] = { function() vim.diagnostic.goto_next() end, desc = "Next diagnostic" },
+        ["gj"] = { function() vim.diagnostic.goto_next() end, desc = "Next diagnostic" },
+        ["gk"] = { function() vim.diagnostic.goto_previous() end, desc = "Previous diagnostic" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
@@ -70,6 +71,8 @@ return {
         ["<leader>zn"] = { "<cmd>Telescope notify<cr>", desc = "Notifications" },
         ["<leader>zm"] = { "<cmd>Mason<cr>", desc = "Mason" },
         ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
+        ["<leader>ls"] = { "<cmd>AerialOpen<cr>", desc = "Aerial" },
+        ["<leader>lS"] = { "<cmd>Telescope lsp_document_symbols<cr>", desc = "Aerial" },
       },
       t = {
         ["<A-1>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
