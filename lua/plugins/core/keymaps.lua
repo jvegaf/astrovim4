@@ -34,17 +34,15 @@ return {
         ["<A-1>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
         ["<A-2>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
         ["<A-4>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
-        ["J"] = {
+        ["L"] = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
         },
-        ["K"] = {
+        ["H"] = {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
         ["<C-m>"] = { "<C-i>", desc = "Jumplist" },
-        ["gj"] = { function() vim.diagnostic.goto_next() end, desc = "Next diagnostic" },
-        ["gk"] = { function() vim.diagnostic.goto_previous() end, desc = "Previous diagnostic" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
@@ -63,7 +61,7 @@ return {
         ["<leader>xc"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Actions" },
         ["<leader>xx"] = { "<cmd>Telescope diagnostics <cr>", desc = "Diagnostics" },
         ["<leader>r"] = { name = "Refactor" },
-        ["<leader>t"] = { name = "Test" },
+        ["<leader>t"] = { name = "Terminal" },
         ["<leader>T"] = { name = "Telescope" },
         ["<leader>z"] = { name = "System" },
         ["<leader>zs"] = { "<cmd>e $MYVIMRC<cr>", desc = "Config" },
