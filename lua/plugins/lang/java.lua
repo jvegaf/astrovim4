@@ -1,8 +1,8 @@
 ---@type LazySpec
 return {
-  -- "AstroNvim/astrocommunity",
-  -- { import = "astrocommunity.pack.java" },
-  -- { import = "astrocommunity.lsp.nvim-java" },
+  "AstroNvim/astrocommunity",
+  { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.lsp.nvim-java" },
   {
     "mfussenegger/nvim-jdtls",
     enabled = false,
@@ -20,12 +20,12 @@ return {
   },
   {
     "simaxme/java.nvim",
-    enabled = false,
+    -- enabled = false,
     config = function() require("simaxme-java").setup() end,
   },
   {
     "oclay1st/gradle.nvim",
-    enabled = false,
+    -- enabled = false,
     cmd = { "Gradle", "GradleExec", "GradleInit" },
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -90,17 +90,4 @@ return {
       "akinsho/toggleterm.nvim",
     },
   },
-  -- {
-  --   "nvim-telescope/telescope.nvim",
-  --   ft = { "java" },
-  --   dependencies = {
-  --     "iomallach/telescope-gradle.nvim",
-  --     "zerochae/telescope-spring.nvim",
-  --   },
-  --   event = "VeryLazy",
-  --   opts = function()
-  --     require("telescope").load_extension "gradle"
-  --     require("telescope").load_extension "spring"
-  --   end,
-  -- },
 }
