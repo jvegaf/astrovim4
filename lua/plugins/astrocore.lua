@@ -8,6 +8,48 @@ return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
+    -- Configure core features of AstroNvim
+    features = {
+      large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+      autopairs = true, -- enable autopairs at start
+      cmp = true, -- enable completion at start
+      diagnostics = { virtual_text = true, virtual_lines = false }, -- diagnostic settings on startup
+      highlighturl = true, -- highlight URLs at start
+      notifications = true, -- enable notifications at start
+    },
+    -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
+    diagnostics = {
+      virtual_text = true,
+      underline = true,
+    },
+    -- passed to `vim.filetype.add`
+    filetypes = {
+      -- see `:h vim.filetype.add` for usage
+      extension = {
+        foo = "fooscript",
+      },
+      filename = {
+        [".foorc"] = "fooscript",
+      },
+      pattern = {
+        [".*/etc/foo/.*"] = "fooscript",
+      },
+    },
+    -- vim options can be configured here
+    options = {
+      opt = { -- vim.opt.<key>
+        relativenumber = true, -- sets vim.opt.relativenumber
+        number = true, -- sets vim.opt.number
+        spell = false, -- sets vim.opt.spell
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+        wrap = false, -- sets vim.opt.wrap
+      },
+      g = { -- vim.g.<key>
+        -- configure global vim variables (vim.g)
+        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
+        -- This can be found in the `lua/lazy_setup.lua` file
+      },
+    },
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
@@ -18,10 +60,22 @@ return {
         ["<Leader>c"] = false,
         ["<Leader>C"] = false,
         ["<Leader>fo"] = false,
-        ["<Leader>fr"] = { ":Telescope oldfiles<cr>" },
+        ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+
+        -- mappings seen under group name "Buffer"
+        ["Q"] = {
+          function()
+            require("astroui.status.heirline").buffer_picker(
+              function(bufnr) require("astrocore.buffer").close(bufnr) end
+            )
+          end,
+          desc = "Close buffer from tabline",
+        },
+        ["<Leader>cu"] = { ":lua Snacks.picker.undo()<cr>" },
+        ["<Leader>fr"] = { ":lua Snacks.picker.recent()<cr>" },
         ["<Leader>q"] = { ":quit<cr>" },
-        ["<Leader><Space>"] = { ":Telescope buffers<cr>" },
-        ["Q"] = { function() require("astrocore.buffer").close() end, desc = "Close Buffer" },
+        ["<Leader><Space>"] = { ":lua Snacks.picker.files()<cr>" },
         ["W"] = { "<cmd>w<cr>", desc = "Write" },
         ["vv"] = { "V", desc = "Visual mode" },
         ["ss"] = { ":split<CR>", desc = "Split horizontal" },
@@ -58,19 +112,21 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         ["<C-a>"] = { "gg<S-v>G", desc = "Select All" },
         ["<leader>x"] = { name = "Diagnostics" },
-        ["<leader>xc"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Actions" },
-        ["<leader>xx"] = { "<cmd>Telescope diagnostics <cr>", desc = "Diagnostics" },
+        ["<leader>xc"] = { "<cmd>lua Snacks.picker.actions()<cr>", desc = "Code Actions" },
+        ["<leader>xx"] = { "<cmd>lua Snacks.picker.diagnostics_buffer()<cr>", desc = "Diagnostics" },
         ["<leader>r"] = { name = "Refactor" },
         ["<leader>t"] = { name = "Terminal" },
         ["<leader>T"] = { name = "Telescope" },
         ["<leader>z"] = { name = "System" },
         ["<leader>zs"] = { "<cmd>e $MYVIMRC<cr>", desc = "Config" },
         ["<leader>zh"] = { "<cmd>checkhealth<cr>", desc = "Health" },
-        ["<leader>zn"] = { "<cmd>Telescope notify<cr>", desc = "Notifications" },
+        ["<leader>zn"] = { "<cmd>lua Snacks.picker.notifications()<cr>", desc = "Notifications" },
         ["<leader>zm"] = { "<cmd>Mason<cr>", desc = "Mason" },
-        ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Projects" },
+        ["<leader>fp"] = { "<cmd>lua Snacks.picker.projects()<cr>", desc = "Projects" },
         ["<leader>ls"] = { "<cmd>AerialOpen<cr>", desc = "Aerial" },
-        ["<leader>lS"] = { "<cmd>Telescope lsp_document_symbols<cr>", desc = "Aerial" },
+        ["<M-j>"] = { ":m .+1<cr>==", desc = "move down" },
+        ["<M-k>"] = { ":m .-2<cr>==", desc = "move up" },
+        ["<leader>lS"] = { "<cmd>lua Snacks.picker.lsp_document_symbols<cr>", desc = "Aerial" },
       },
       t = {
         ["<A-1>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
@@ -83,6 +139,8 @@ return {
         ["<"] = { "<gv", desc = "Stay in indent mode" },
         [">"] = { ">gv", desc = "Stay in indent mode" },
         ["p"] = { '"_dP', desc = "Dont yank in visual paste" },
+        ["<M-j>"] = { ":m '>+1<cr>gv=gv", desc = "move down" },
+        ["<M-k>"] = { ":m '<-2<cr>gv=gv", desc = "move up" },
       },
       x = {
         ["p"] = { '"_dP', desc = "Dont yank in visual paste" },

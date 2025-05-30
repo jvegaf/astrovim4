@@ -72,21 +72,3 @@ autocmd("LspAttach", {
     )
   end,
 })
-
--- nvim-tree
-
-local function open_nvim_tree(data)
-  local directory = vim.fn.isdirectory(data.file) == 1
-
-  if not directory then return end
-
-  vim.cmd.enew()
-
-  vim.cmd.bw(data.buf)
-
-  vim.cmd.cd(data.file)
-
-  require("nvim-tree.api").tree.open()
-end
-
-autocmd({ "VimEnter" }, { callback = open_nvim_tree })

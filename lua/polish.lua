@@ -1,7 +1,3 @@
--- This will run last in the setup process and is a good place to configure
--- things like custom filetypes. This just pure lua so anything that doesn't
--- fit in the normal config locations above can go here
-
 require "autocmds"
 
 if vim.fn.has "win32" == 1 then
@@ -18,24 +14,3 @@ if vim.fn.has "win32" == 1 then
     cache_enabled = 0,
   }
 end
-
--- TODO: move this import to autocmd
-require "flutter_feature_scaffold"
-
--- vim.filetype.add {
---   pattern = { "*.qss" },
---   command = function() vim.opt.filetype = "css" end,
--- }
-
--- Set up custom filetypes
--- vim.filetype.add {
---   extension = {
---     foo = "fooscript",
---   },
---   filename = {
---     ["Foofile"] = "fooscript",
---   },
---   pattern = {
---     ["~/%.config/foo/.*"] = "fooscript",
---   },
--- }
