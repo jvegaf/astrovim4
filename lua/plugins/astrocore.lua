@@ -122,6 +122,7 @@ return {
         ["<leader>zh"] = { "<cmd>checkhealth<cr>", desc = "Health" },
         ["<leader>zn"] = { "<cmd>lua Snacks.picker.notifications()<cr>", desc = "Notifications" },
         ["<leader>zm"] = { "<cmd>Mason<cr>", desc = "Mason" },
+        ["<leader>zl"] = { "<cmd>Lazy<cr>", desc = "Lazy" },
         ["<leader>fp"] = { "<cmd>lua Snacks.picker.projects()<cr>", desc = "Projects" },
         ["<leader>ls"] = { "<cmd>AerialOpen<cr>", desc = "Aerial" },
         ["<M-j>"] = { ":m .+1<cr>==", desc = "move down" },
