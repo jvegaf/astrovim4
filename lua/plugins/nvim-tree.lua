@@ -6,9 +6,6 @@ return {
     version = "*",
     event = "VimEnter",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    keys = {
-      -- { "<leader>o", "<cmd>NvimTreeFocus<cr>",  desc = "NvimTree Focus" },
-    },
     config = function()
       local api = require "nvim-tree.api"
       api.events.subscribe(api.events.Event.FileCreated, function(file) vim.cmd("edit " .. file.fname) end)
