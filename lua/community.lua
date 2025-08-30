@@ -37,7 +37,7 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.hyprlang" },
+  { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.xml" },
