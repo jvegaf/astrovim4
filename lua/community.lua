@@ -5,6 +5,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+  { import = "astrocommunity.ai.opencode-nvim" },
   { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.color.nvim-highlight-colors" },
   { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
@@ -15,14 +16,9 @@ return {
   { import = "astrocommunity.completion.blink-cmp-emoji" },
   { import = "astrocommunity.completion.blink-cmp-git" },
   { import = "astrocommunity.completion.blink-cmp-tmux" },
-  { import = "astrocommunity.completion.avante-nvim" },
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.docker.lazydocker" },
   { import = "astrocommunity.editing-support.bigfile-nvim" },
   { import = "astrocommunity.editing-support.treesj" },
-  { import = "astrocommunity.editing-support.codecompanion-nvim" },
-  { import = "astrocommunity.editing-support.copilotchat-nvim" },
-  { import = "astrocommunity.file-explorer.oil-nvim" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.git.gitgraph-nvim" },

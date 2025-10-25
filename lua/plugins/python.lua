@@ -1,7 +1,6 @@
-local keys = require "lazy.core.handler.keys"
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.python-ruff" },
+  -- { import = "astrocommunity.pack.python-ruff" },
   {
     enabled = false,
     event = "VeryLazy",
@@ -11,6 +10,7 @@ return {
   },
   {
     "stevanmilic/nvim-lspimport",
+    enabled = false,
     ft = { "python" },
     event = "VeryLazy",
     keys = { { "<leader>I", "<cmd>lua require('lspimport').import()<cr>" } },
