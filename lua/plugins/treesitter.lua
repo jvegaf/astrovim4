@@ -14,8 +14,8 @@ return {
       "yaml",
       "css",
       "json",
+      "regex",
       "html",
-      "http",
     },
   },
 }

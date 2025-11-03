@@ -67,11 +67,12 @@ return {
 
         -- mappings seen under group name "Buffer"
         ["Q"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
+          "<cmd>bd<cr>",
+          -- function()
+          --   require("astroui.status.heirline").buffer_picker(
+          --     function(bufnr) require("astrocore.buffer").close(bufnr) end
+          --   )
+          -- end,
           desc = "Close buffer from tabline",
         },
         ["<Leader>cu"] = { ":lua Snacks.picker.undo()<cr>" },
@@ -87,9 +88,9 @@ return {
         ["sk"] = { "<C-w>k", desc = "Move Win up" },
         ["sl"] = { "<C-w>l", desc = "Move Win right" },
         ["<Esc>"] = { ":nohlsearch<Bar>:echo<CR>", desc = "Cancel search highlighting" },
-        ["<A-1>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
-        ["<A-2>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
-        ["<A-4>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
+        ["<A-1>"] = { "<cmd>lua Snacks.terminal.toggle()<cr>", desc = "Toggle terminal" },
+        -- ["<A-2>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
+        -- ["<A-4>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
         ["L"] = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
@@ -123,19 +124,17 @@ return {
         ["<leader>z"] = { name = "System" },
         ["<leader>zs"] = { "<cmd>e $MYVIMRC<cr>", desc = "Config" },
         ["<leader>zh"] = { "<cmd>checkhealth<cr>", desc = "Health" },
-        ["<leader>zn"] = { "<cmd>lua Snacks.picker.notifications()<cr>", desc = "Notifications" },
         ["<leader>zm"] = { "<cmd>Mason<cr>", desc = "Mason" },
         ["<leader>zl"] = { "<cmd>Lazy<cr>", desc = "Lazy" },
         ["<leader>fp"] = { "<cmd>lua Snacks.picker.projects()<cr>", desc = "Projects" },
-        ["<leader>ls"] = { "<cmd>AerialOpen<cr>", desc = "Aerial" },
+        ["<leader>ls"] = { "<cmd>lua Snacks.picker.lsp_document_symbols<cr>", desc = "Aerial" },
         ["<M-j>"] = { ":m .+1<cr>==", desc = "move down" },
         ["<M-k>"] = { ":m .-2<cr>==", desc = "move up" },
-        ["<leader>lS"] = { "<cmd>lua Snacks.picker.lsp_document_symbols<cr>", desc = "Aerial" },
       },
       t = {
-        ["<A-1>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
-        ["<A-2>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
-        ["<A-4>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+        ["<A-1>"] = { "<cmd>lua Snacks.terminal.toggle()<cr>", desc = "Toggle terminal" },
+        -- ["<A-2>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+        -- ["<A-4>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
       },
